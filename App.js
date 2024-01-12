@@ -7,10 +7,7 @@ import HomeScreen from './screens/HomeScreen';
 import { Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
-import {
-  SafeAreaProvider,
-  // useSafeAreaInsets,
-} from 'react-native-safe-area-context';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 
 const Tab = createBottomTabNavigator();
