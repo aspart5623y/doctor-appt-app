@@ -45,7 +45,7 @@ function MyTabBar({ state, descriptors, navigation }) {
         const onLongPress = () => {
           navigation.emit({
             type: 'tabLongPress',
-            target: route.key,
+            target: route.key
           });
         };
 
@@ -58,7 +58,7 @@ function MyTabBar({ state, descriptors, navigation }) {
             testID={options.tabBarTestID}
             onPress={onPress}
             onLongPress={onLongPress} 
-            style={{ flex: isFocused ? 1 : 0, maxWidth: maxWidth, flexDirection: 'row', alignItems: 'center', color: isFocused ? '#63B4FF' : '#8696BB', backgroundColor: isFocused ?  "#63B4FF1A" : '#fff', padding: 12, gap: 8, borderRadius: 12 }}
+            style={{ flexDirection: 'row', alignItems: 'center', color: isFocused ? '#63B4FF' : '#8696BB', backgroundColor: isFocused ?  "#63B4FF1A" : '#fff', padding: 12, gap: 8, borderRadius: 12 }}
           >
             {(icon && activeIcon) && React.cloneElement(isFocused ? activeIcon : icon, { color: isFocused ? '#63B4FF' : '#8696BB' })}
             {isFocused && <Text style={styles.navText}>{label}</Text>}
@@ -137,6 +137,8 @@ const styles = StyleSheet.create({
     paddingBottom: 40, 
     paddingHorizontal: 24, 
     backgroundColor: '#fff',
+    borderTopWidth: 1,
+    borderTopColor: '#F6F6F6',
     ...Platform.select({
       ios: {
         shadowColor: 'rgba(0, 0, 0, 0.2)',

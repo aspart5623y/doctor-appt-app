@@ -1,11 +1,12 @@
 import React from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
-import { Entypo, Feather, Ionicons } from '@expo/vector-icons';
+import { Feather, Ionicons } from '@expo/vector-icons';
+import CardButton from './CardButton';
+
+const avatar = require('../assets/avatar-2.png')
 
 
-const avatar = require('../assets/avatar-1.png')
-
-const BlueCard = () => {
+const ScheduleCard = () => {
   return (
     <View style={styles.card}>
       <View style={styles.nameContainer}>
@@ -16,34 +17,39 @@ const BlueCard = () => {
             <Text style={styles.role}>General Doctor</Text>
           </View>
         </View>
-
-        <Entypo name="chevron-thin-right" size={24} color="white" />
       </View>
 
       <View style={styles.divider}></View>
 
       <View style={styles.dateTimeContainer}>
         <View style={styles.dateTimeHolder}>
-          <Ionicons name="calendar-outline" size={16} color="white" />
+          <Ionicons name="calendar-outline" size={16} color="#8696BB" />
           <Text style={styles.dateTimeText}>Sunday, 12 June</Text>
         </View>
 
         <View style={styles.dateTimeHolder}>
-          <Feather name="clock" size={16} color="white" />
+          <Feather name="clock" size={16} color="#8696BB" />
           <Text style={styles.dateTimeText}>11:00 - 12:00 AM</Text>
         </View>
       </View>
+      <CardButton />
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   card: {
-    padding: 20,
+    paddingVertical: 20,
+    paddingHorizontal: 16,
     borderWidth: 0,
     borderRadius: 12,
-    backgroundColor: '#4894FE',
-    marginBottom: 20
+    backgroundColor: '#fff',
+    shadowColor: '#5A75A70A',
+    shadowOffset: { width: 2, height: 12 },
+    shadowRadius: 20,
+    shadowOpacity: 1,
+    elevation: 2,
+    marginBottom: 16
   },
   avatar: {
     objectFit: "cover",
@@ -63,14 +69,14 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   name: {
-    color: '#FFF',
+    color: '#0D1B34',
     fontSize: 16,
     fontStyle: "normal",
     fontWeight: "700",
     marginBottom: 8
   },
   role: {
-    color: "#CBE1FF",
+    color: "#8696BB",
     fontSize: 14,
     fontStyle: "normal",
     fontWeight: "400"
@@ -79,14 +85,13 @@ const styles = StyleSheet.create({
     marginVertical: 16,
     height: 1,
     width: '100%',
-    backgroundColor: '#fff',
-    opacity: 0.15
+    backgroundColor: '#F5F5F5'
   },
   dateTimeContainer: {
     flexDirection: 'row',
     gap: 30,
     alignItems: 'center',
-    // justifyContent: 'space-between'
+    marginBottom: 20
   },
   dateTimeHolder: {
     flexDirection: 'row',
@@ -94,11 +99,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   dateTimeText: {
-    color: "#FFF",
+    color: "#8696BB",
     fontSize: 12,
     fontStyle: "normal",
     fontWeight: "400"
   }
 });
 
-export default BlueCard
+export default ScheduleCard
